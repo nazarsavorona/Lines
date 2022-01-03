@@ -14,13 +14,15 @@ public class Graph<T> {
     public void addEdge(T v1, T v2) {
         int i = data.indexOf(v1);
         int j = data.indexOf(v2);
-        this.matrix[i][j] = this.matrix[j][i] = true;
+        this.matrix[i][j] = true;
+        this.matrix[j][i] = true;
     }
 
     public void removeEdge(T v1, T v2) {
         int i = data.indexOf(v1);
         int j = data.indexOf(v2);
-        this.matrix[i][j] = this.matrix[j][i] = false;
+        this.matrix[i][j] = false;
+        this.matrix[j][i] = false;
     }
 
     public boolean DFS(T startV, T wantedV) {
